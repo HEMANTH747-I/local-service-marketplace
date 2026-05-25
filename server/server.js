@@ -18,8 +18,13 @@ connectMongo();
 const app = express();
 
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://https://local-service-marketplace-om9w.vercel.app/'
+  ],
+  credentials: true
+}));app.use(express.json());
 app.use('/api/admin', adminRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/bookings', bookingRoutes);
