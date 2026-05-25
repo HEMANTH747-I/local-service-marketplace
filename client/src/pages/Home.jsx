@@ -25,9 +25,10 @@ export default function Home() {
     setLoading(false);
   };
 
-  useEffect(() => {
-    searchProviders();
-  }, []);
+useEffect(() => {
+  searchProviders();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   return (
     <div className="min-h-screen bg-gray-50">

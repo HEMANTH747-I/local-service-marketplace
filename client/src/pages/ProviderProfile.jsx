@@ -8,7 +8,6 @@ export default function ProviderProfile() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [provider, setProvider] = useState(null);
-  const [services, setServices] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [avgRating, setAvgRating] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -17,9 +16,10 @@ export default function ProviderProfile() {
   const [booking, setBooking] = useState(false);
   const [success, setSuccess] = useState('');
 
-  useEffect(() => {
-    fetchData();
-  }, [id]);
+useEffect(() => {
+  fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [id]);
 
 const fetchData = async () => {
   try {
